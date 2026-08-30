@@ -1,0 +1,888 @@
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --ink: #111111;
+  --gray: #6b6b6b;
+  --gray-light: #9a9a9a;
+  --rule: #111111;
+  --hairline: #e2e2e2;
+  --red: #e10600;
+  --green: #147a3f;
+  --green-bg: #eaf5ee;
+  --red-bg: #fdeceb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  background-image: linear-gradient(to right, rgba(17, 17, 17, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 17, 17, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 5rem;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid var(--rule);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-mark {
+  width: 14px;
+  height: 14px;
+  background: var(--red);
+  flex-shrink: 0;
+}
+.brand-name {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.tagline {
+  margin: 12px 0 2rem;
+  color: var(--gray);
+  font-size: 14px;
+  max-width: 480px;
+  transition: margin-bottom 0.18s ease;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+}
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+}
+.status-dot-mock {
+  background: var(--red);
+}
+
+/* Stats strip */
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 2.5rem;
+  transition: margin-bottom 0.18s ease;
+}
+.stat-cell {
+  padding: 16px 20px;
+  border-left: 1px solid var(--hairline);
+  position: relative;
+}
+.stat-cell:first-child {
+  border-left: none;
+}
+.stat-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gray);
+}
+.stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.stat-value {
+  margin: 8px 0 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+.stat-progress {
+  margin-top: 8px;
+  height: 3px;
+  background: var(--hairline);
+}
+.stat-progress-fill {
+  height: 100%;
+  background: var(--red);
+  transition: width 0.3s ease;
+}
+
+/* Section navigation */
+.section-nav {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 2rem;
+}
+.section-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 10px 20px 10px 0;
+  margin-right: 28px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray);
+  cursor: pointer;
+  position: relative;
+}
+.section-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gray-light);
+}
+.section-tab-active {
+  color: var(--ink);
+  border-bottom-color: var(--red);
+}
+.section-tab-active .section-num {
+  color: var(--red);
+}
+
+.panel {
+  max-width: 640px;
+}
+
+.card {
+  background: var(--surface);
+  border-top: 2px solid var(--rule);
+  padding: 1.75rem 0 0;
+  position: relative;
+}
+
+.card h2 {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 1.25rem;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--gray);
+}
+.field input[type='number'],
+.field input[type='text'],
+textarea {
+  background: var(--surface);
+  border: none;
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  color: var(--ink);
+  padding: 8px 2px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+.field input:focus,
+textarea:focus {
+  outline: none;
+  border-bottom: 2px solid var(--red);
+  padding-bottom: 7px;
+}
+textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  background: var(--surface);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  border-radius: 0;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.chip-on {
+  background: var(--ink);
+  color: var(--surface);
+}
+
+button.primary,
+button.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 0;
+  padding: 11px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  border: 1px solid var(--ink);
+}
+button.primary {
+  background: var(--ink);
+  color: var(--surface);
+}
+button.primary:hover:not(:disabled) {
+  background: var(--red);
+  border-color: var(--red);
+}
+button.secondary {
+  background: var(--surface);
+  color: var(--ink);
+}
+button.secondary:hover:not(:disabled) {
+  border-color: var(--red);
+  color: var(--red);
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.hint {
+  color: var(--gray);
+  font-size: 13px;
+}
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 8px;
+}
+.badge-ok {
+  background: var(--green-bg);
+  color: var(--green);
+}
+.badge-pending {
+  background: var(--red-bg);
+  color: var(--red);
+}
+.card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.card-title-row h2 {
+  margin: 0;
+}
+
+.pick {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--hairline);
+  position: relative;
+}
+.drift-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--gray);
+  margin: 12px 0;
+}
+
+.result {
+  margin-top: 1.25rem;
+  padding: 12px 14px;
+  border-left: 3px solid;
+  font-size: 13px;
+}
+.result-ok {
+  background: var(--green-bg);
+  border-color: var(--green);
+  color: var(--green);
+}
+.result-blocked {
+  background: var(--red-bg);
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.approval-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--red);
+  font-size: 12px;
+  word-break: break-all;
+  text-decoration: none;
+}
+.approval-link:hover {
+  text-decoration: underline;
+}
+
+.agent-reasoning {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--gray);
+  margin: 8px 0;
+}
+
+.alternatives {
+  margin-top: 6px;
+}
+.alt-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: var(--surface);
+  border: none;
+  border-bottom: 1px solid var(--hairline);
+  border-radius: 0;
+  padding: 10px 2px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+.alt-row:hover {
+  color: var(--red);
+}
+
+/* Audit ledger */
+.ledger {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ledger-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hairline);
+  animation: rowIn 0.3s ease;
+}
+@keyframes rowIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.ledger-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--ink);
+}
+.ledger-icon-ok {
+  color: var(--green);
+}
+.ledger-icon-fail {
+  color: var(--red);
+}
+.ledger-label {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+.ledger-detail {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--red);
+}
+.ledger-detail-neutral {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--gray);
+}
+.ledger-meta {
+  margin: 4px 0 0;
+  color: var(--gray-light);
+}
+
+/* Spinner */
+.spin {
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Toasts */
+.toast-stack {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1000;
+  max-width: 320px;
+}
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--surface);
+  border-left: 3px solid;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  animation: toastIn 0.2s ease;
+  cursor: pointer;
+}
+.toast-success {
+  border-color: var(--green);
+  color: var(--green);
+}
+.toast-error {
+  border-color: var(--red);
+  color: var(--red);
+}
+.toast-info {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  color: var(--ink);
+  cursor: pointer;
+  padding: 0;
+}
+.icon-button:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+/* Info panel */
+.info-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.5);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2000;
+}
+.info-panel {
+  background: var(--surface);
+  width: 100%;
+  max-width: 480px;
+  height: 100%;
+  overflow-y: auto;
+  padding: 2rem 2rem 4rem;
+  animation: slideIn 0.2s ease;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.info-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+.info-header h2 {
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+.info-section {
+  margin-bottom: 2rem;
+}
+.info-section h3 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray);
+  margin: 0 0 0.75rem;
+}
+.info-section p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0 0 0.75rem;
+}
+.info-lede {
+  font-size: 17px !important;
+  font-weight: 600;
+  line-height: 1.4 !important;
+}
+.info-steps {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.info-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.info-links li {
+  border-top: 1px solid var(--hairline);
+}
+.info-links a {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px 0;
+  text-decoration: none;
+  color: var(--ink);
+}
+.info-links a:hover {
+  color: var(--red);
+}
+.info-links strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+.info-link-note {
+  display: block;
+  font-size: 12px;
+  color: var(--gray);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+/* Annotate layer - matches the approved Stitch reference: red
+   JetBrains Mono text, not a handwriting font. That look is reserved
+   for the flow diagram only. Each annotation is a child of the exact
+   field it explains, positioned in that field's own local coordinate
+   space - never an offset guessed from a container's top edge, so it
+   can't drift when content above it changes height. */
+.field,
+.agent-reasoning,
+.alternatives {
+  position: relative;
+}
+.annotation {
+  position: absolute;
+  top: 50%;
+  right: -226px;
+  transform: translateY(-50%);
+  width: 210px;
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.annotation-connector {
+  flex-shrink: 0;
+}
+.annotation-text {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: #e10600;
+}
+
+/* Hide the annotate layer below a width where there's no room for it -
+   mirrors Stitch's own "hidden md:block / hidden xl:block" behaviour so
+   the toggle never breaks the layout on a narrow viewport. */
+@media (max-width: 1180px) {
+  .annotation {
+    display: none;
+  }
+}
+
+/* Annotate toggle switch */
+.annotate-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+.annotate-toggle-on {
+  color: var(--red);
+}
+.annotate-toggle-track {
+  width: 30px;
+  height: 16px;
+  border: 1px solid var(--ink);
+  position: relative;
+  flex-shrink: 0;
+  transition: border-color 0.15s ease;
+}
+.annotate-toggle-on .annotate-toggle-track {
+  border-color: var(--red);
+}
+.annotate-toggle-thumb {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 12px;
+  height: 12px;
+  background: var(--ink);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.annotate-toggle-on .annotate-toggle-thumb {
+  background: var(--red);
+  transform: translateX(14px);
+}
+
+/* Flow diagram (hand-drawn, in the Info panel) */
+.flow-diagram {
+  width: 100%;
+  height: auto;
+  margin: 0.5rem 0 1.5rem;
+}
+
+/* Above-pointing annotation (stats strip, section nav) - its own class,
+   deliberately not sharing .annotation, so it can never inherit that
+   variant's top/right/width and end up with a conflicting position. */
+.annotation-above-wrap {
+  position: absolute;
+  bottom: 100%;
+  left: 8px;
+  margin-bottom: 6px;
+  width: 160px;
+  z-index: 5;
+  pointer-events: none;
+  text-align: left;
+}
+.annotation-above-wrap .annotation-text {
+  margin: 0 0 2px;
+}
+.annotation-above-wrap .annotation-connector {
+  display: block;
+}
+
+/* Circled callout */
+.annotation-circle-wrap {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+}
+.annotation-circle-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.annotation-circle-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  color: #e10600;
+}
+.annotation-circle-label-right {
+  left: calc(100% + 14px);
+}
+.annotation-circle-label-left {
+  right: calc(100% + 14px);
+}
+
+/* Straight/wavy line connector (buttons) */
+.annotation-line-wrap {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 5;
+  pointer-events: none;
+  margin-left: 4px;
+}
+.annotation-line-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  color: #e10600;
+  white-space: nowrap;
+}
+
+/* Bracket spanning multiple fields */
+.annotation-bracket-wrap {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 5;
+  pointer-events: none;
+}
+.annotation-bracket-text {
+  margin: 0;
+  width: 150px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: #e10600;
+}
+
+@media (max-width: 1180px) {
+  .annotation-circle-wrap,
+  .annotation-line-wrap,
+  .annotation-bracket-wrap,
+  .annotation-above-wrap {
+    display: none;
+  }
+}
+
+/* Flow diagram section on the main page */
+.flow-section {
+  margin-top: 3rem;
+  padding-top: 1.75rem;
+  border-top: 2px solid var(--rule);
+  max-width: 100%;
+}
+.flow-section h2 {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 1.5rem;
+}
+.flow-captions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  border-top: 1px solid var(--hairline);
+  margin-top: 1.5rem;
+}
+.flow-caption {
+  padding: 16px 24px 0 0;
+  border-left: 1px solid var(--hairline);
+  padding-left: 20px;
+}
+.flow-caption:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+.flow-caption-num {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--red);
+  margin-bottom: 6px;
+}
+.flow-caption p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* When Annotate is on, give the page more breathing room above the
+   stats strip and the section nav specifically - that's where the
+   above-pointing notes need to sit, and the default gaps are sized for
+   the clean layout, not for a two-line red note plus a connector on
+   top. Expanding these only in this mode keeps the normal page tight. */
+.annotate-active .tagline {
+  margin-bottom: 100px;
+}
+.annotate-active .stats-strip {
+  margin-bottom: 100px;
+}

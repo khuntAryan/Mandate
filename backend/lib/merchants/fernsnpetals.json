@@ -1,0 +1,8 @@
+{
+  "merchant": "Ferns N Petals",
+  "products": [
+    { "id": "fnp-hamper", "name": "Ferns N Petals chocolate hamper", "price": 1599, "category": "gifts", "tags": ["gift", "chocolate", "birthday"] },
+    { "id": "fnp-bouquet", "name": "Ferns N Petals fresh flower bouquet", "price": 899, "category": "gifts", "tags": ["gift", "flowers", "romantic"] },
+    { "id": "fnp-cakecombo", "name": "Ferns N Petals cake and flowers combo", "price": 1299, "category": "gifts", "tags": ["gift", "cake", "flowers", "birthday"] }
+  ]
+}

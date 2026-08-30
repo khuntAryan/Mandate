@@ -1,0 +1,8 @@
+{
+  "merchant": "IGP",
+  "products": [
+    { "id": "igp-planter", "name": "IGP succulent planter gift box", "price": 1299, "category": "gifts", "tags": ["gift", "plant", "home", "birthday"] },
+    { "id": "igp-photoframe", "name": "IGP personalized photo frame", "price": 899, "category": "gifts", "tags": ["gift", "personalized", "birthday"] },
+    { "id": "igp-hamper", "name": "IGP birthday hamper", "price": 1799, "category": "gifts", "tags": ["gift", "birthday", "hamper"] }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "merchant": "Blinkit",
+  "products": [
+    { "id": "blinkit-ferrero", "name": "Ferrero Rocher chocolate box, 24 pieces", "price": 649, "category": "gifts", "tags": ["chocolate", "gift", "birthday", "sweet"] },
+    { "id": "blinkit-cadbury", "name": "Cadbury Celebrations gift pack", "price": 399, "category": "gifts", "tags": ["chocolate", "gift", "budget"] },
+    { "id": "blinkit-fragrance", "name": "Godrej Aer home fragrance set", "price": 549, "category": "home", "tags": ["home", "gift", "fragrance"] },
+    { "id": "blinkit-trimmer", "name": "Philips grooming trimmer", "price": 1299, "category": "grooming", "tags": ["gift", "electronics", "grooming"] },
+    { "id": "blinkit-candle", "name": "Scented candle gift set", "price": 699, "category": "home", "tags": ["gift", "candle", "home", "relaxing"] },
+    { "id": "blinkit-dryfruits", "name": "Premium dry fruits gift box", "price": 899, "category": "gifts", "tags": ["gift", "dryfruits", "festive"] },
+    { "id": "blinkit-cookies", "name": "Assorted cookies gift tin", "price": 449, "category": "gifts", "tags": ["gift", "cookies", "sweet", "budget"] }
+  ]
+}

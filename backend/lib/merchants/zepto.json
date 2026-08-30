@@ -1,0 +1,11 @@
+{
+  "merchant": "Zepto",
+  "products": [
+    { "id": "zepto-lindt", "name": "Lindt chocolate truffle box", "price": 899, "category": "gifts", "tags": ["chocolate", "gift", "premium"] },
+    { "id": "zepto-flowers", "name": "Fresh flower bouquet", "price": 599, "category": "gifts", "tags": ["gift", "flowers", "birthday", "romantic"] },
+    { "id": "zepto-bathset", "name": "Bath and body gift set", "price": 999, "category": "beauty", "tags": ["gift", "bath", "relaxing"] },
+    { "id": "zepto-diffuser", "name": "Scented diffuser set", "price": 749, "category": "home", "tags": ["gift", "home", "fragrance"] },
+    { "id": "zepto-tea", "name": "Premium tea gift box", "price": 649, "category": "gifts", "tags": ["gift", "tea", "budget"] },
+    { "id": "zepto-personalcare", "name": "Personal care combo pack", "price": 1099, "category": "beauty", "tags": ["gift", "skincare", "everyday"] }
+  ]
+}

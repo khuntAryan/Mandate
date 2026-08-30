@@ -1,0 +1,13 @@
+{
+  "merchant": "Nykaa",
+  "products": [
+    { "id": "nykaa-glow-set", "name": "Nykaa signature glow gift set", "price": 1850, "category": "beauty", "tags": ["gift", "skincare", "glow", "birthday"] },
+    { "id": "nykaa-lip-combo", "name": "Nykaa matte lipstick set", "price": 799, "category": "beauty", "tags": ["gift", "makeup", "lipstick"] },
+    { "id": "nykaa-facewash-combo", "name": "Nykaa naturals face wash combo", "price": 549, "category": "beauty", "tags": ["skincare", "everyday"] },
+    { "id": "nykaa-serum", "name": "Nykaa skinrx vitamin C serum", "price": 899, "category": "beauty", "tags": ["skincare", "serum", "gift"] },
+    { "id": "nykaa-perfume-set", "name": "Nykaa perfume discovery set", "price": 1299, "category": "beauty", "tags": ["gift", "perfume", "birthday"] },
+    { "id": "nykaa-jewelry-box", "name": "Nykaa fashion jewelry gift box", "price": 1850, "category": "fashion", "tags": ["gift", "jewelry", "birthday"] },
+    { "id": "nykaa-hair-kit", "name": "Nykaa hair care combo kit", "price": 1199, "category": "beauty", "tags": ["haircare", "gift"] },
+    { "id": "nykaa-luxe-kit", "name": "Nykaa luxe makeup kit", "price": 2499, "category": "beauty", "tags": ["makeup", "gift", "premium"] }
+  ]
+}
